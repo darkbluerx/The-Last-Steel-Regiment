@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 26f8e78a53b80d34bb5e8a15938d2192
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - waltherBullet: {fileID: 1916910979505710220, guid: 837c33aef13ddb84bb7ef8ba23e017b4, type: 3}
+  - MP40Bullet: {fileID: 1916910979505710220, guid: f67e2480dadecb94aaacbf84355d3f73, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

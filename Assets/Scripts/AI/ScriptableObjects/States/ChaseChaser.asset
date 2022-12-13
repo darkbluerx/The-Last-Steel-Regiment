@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c815f138afd32b4e8f32bebc6d32a50, type: 3}
+  m_Name: ChaseChaser
+  m_EditorClassIdentifier: 
+  actions:
+  - {fileID: 11400000, guid: 8ded8f19c9b1c894ea406d8798412387, type: 2}
+  - {fileID: 11400000, guid: e493ce21e24a916469fce780c81aac77, type: 2}
+  transitions:
+  - decision: {fileID: 11400000, guid: 815a70d51f50dab46b3e8c1186cb46f2, type: 2}
+    trueState: {fileID: 11400000, guid: 85932cf85953c3a40aca487ca5183c67, type: 2}
+    falseState: {fileID: 11400000, guid: c193d827b08520742acdb972b5b991f2, type: 2}
+  sceneGizmoColor: {r: 1, g: 0.051886797, b: 0.051886797, a: 1}
