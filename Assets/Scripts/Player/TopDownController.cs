@@ -1,16 +1,10 @@
-using Cinemachine;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(NavMeshAgent))]
 public class TopDownController : MonoBehaviour
 {
-    public int m_PlayerNumber = 1;
-
-    //public GameObject target;
-    //public GameObject player;
+    //public int m_PlayerNumber = 1;
     NavMeshAgent playerAgent;
 
     [SerializeField] Camera mainCamera;
@@ -22,6 +16,7 @@ public class TopDownController : MonoBehaviour
     [SerializeField] float runningSpeed = 10;
     [SerializeField] float walkingSpeed = 4;
     [Space]
+
     [SerializeField] float maxStamina = 5;
     [SerializeField] float currentStamina;
 
@@ -30,29 +25,18 @@ public class TopDownController : MonoBehaviour
 
     bool canRun = true;
 
-
     private void Awake()
-    {
-       // player = GameObject.Find("Player(Clone)");
+    {     
         rb2d = GetComponent<Rigidbody2D>();
         playerAgent = GetComponent<NavMeshAgent>();
-
-        // mainCamera = Camera.main;
-
-        // GetComponent<CinemachineVirtualCamera>().Follow = target.transform;
-        // mainCamera.transform.parent = target.transform;
-
-        //asetetaan akentin tranform normaaliin asentoon
     }
 
     void Start()
     {
-        //heataan Hiargista objektin tagin nimen perusteella
-        // player = GameObject.FindGameObjectWithTag("Player");
-
         moveSpeed = walkingSpeed;
         currentStamina = maxStamina;
 
+        //sets the player's tranform correctly
         playerAgent.updateRotation = false;
         playerAgent.updateUpAxis = false;
     }
@@ -67,7 +51,6 @@ public class TopDownController : MonoBehaviour
     private void DrawRay()
     {
        // Debug.DrawLine(this.transform.position, this.transform.right * 1, Color.red, 1);
-
         Vector3 forward = transform.TransformDirection(Vector3.right) * 15;
         Debug.DrawRay(transform.position, forward, Color.green);
     }

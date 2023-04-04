@@ -5113,7 +5113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {r: 0.03127098, g: 1, b: 0, a: 1}
-  currentSprite: {fileID: 21300000, guid: efea1c78b3f90034cb6375c784c07c0e, type: 3}
+  currentCrosshair: {fileID: 0}
   crosshairList:
   - {fileID: 21300000, guid: efea1c78b3f90034cb6375c784c07c0e, type: 3}
   - {fileID: 21300000, guid: 5aa8ff9fe24d2f844a7347e2e76d6d78, type: 3}
@@ -100036,7 +100036,7 @@ MonoBehaviour:
   barrelPoint: {fileID: 4624493199997477290}
   bullet: {fileID: 1916910979505710220, guid: 837c33aef13ddb84bb7ef8ba23e017b4, type: 3}
   shell: {fileID: 0}
-  currentMode: 0
+  shootingMode: 0
   offSafety: 0
   allowButtonHold: 1
 --- !u!4 &4624493200445009626
@@ -100149,19 +100149,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.0001, y: 0.0001}
   m_EdgeRadius: 0
---- !u!114 &4950791988775133066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4950791988775133043}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ada79f7373d74f42b3b017a34d7ab95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_health: 5
-  m_maxHealth: 5
-  m_ammo: 30
-  m_maxAmmo: 30

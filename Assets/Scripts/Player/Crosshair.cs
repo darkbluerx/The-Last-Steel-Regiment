@@ -9,7 +9,7 @@ public class Crosshair : MonoBehaviour
     Image pic;
     [SerializeField] Color color;
     
-    [SerializeField] Sprite currentSprite;
+    [SerializeField] Sprite currentCrosshair;
     [SerializeField] List<Sprite>crosshairList;
 
     [SerializeField] AudioEvent weaponPickUp;
@@ -25,7 +25,7 @@ public class Crosshair : MonoBehaviour
     private void Awake()
     {
         pic = GetComponent<Image>();
-        pic.sprite = currentSprite;          
+        pic.sprite = currentCrosshair;          
     }
 
     void Start()
@@ -43,9 +43,9 @@ public class Crosshair : MonoBehaviour
     public void HangunCrosshair()
     {
         playAudio = false;
-        weaponPickUp.Play(audioSource);
-        currentSprite = crosshairList[0];
-        pic.sprite = currentSprite;
+        weaponPickUp.Play(audioSource); //play "weapon pick up" sound
+        currentCrosshair = crosshairList[0];
+        pic.sprite = currentCrosshair;
         
     }
 
@@ -53,23 +53,23 @@ public class Crosshair : MonoBehaviour
     {
         playAudio = false;
         weaponPickUp.Play(audioSource);
-        currentSprite = crosshairList[1];
-        pic.sprite = currentSprite; 
+        currentCrosshair = crosshairList[1];
+        pic.sprite = currentCrosshair; 
     }
 
     public void RifleCrosshair()
     {
         playAudio = false;
         weaponPickUp.Play(audioSource);
-        currentSprite = crosshairList[2];
-        pic.sprite = currentSprite;
+        currentCrosshair = crosshairList[2];
+        pic.sprite = currentCrosshair;
     }
 
     public void MachinegunCrosshair()
     {
         playAudio = false;
         weaponPickUp.Play(audioSource);
-        currentSprite = crosshairList[3];
-        pic.sprite = currentSprite;
+        currentCrosshair = crosshairList[3];
+        pic.sprite = currentCrosshair;
     }
 }

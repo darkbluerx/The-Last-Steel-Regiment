@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.tag == "Bullet") rb.constraints = RigidbodyConstraints2D.FreezePosition;
         if (collision.gameObject.tag == "Enemy") Destroy(bullet);
 
-        //väliaikaiksesti poissa
+       
         //IDamageable iDamageable = collision.gameObject.GetComponent<IDamageable>();
         //if (iDamageable != null) iDamageable.TakeDamage(20);
     }

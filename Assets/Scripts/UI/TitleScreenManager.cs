@@ -41,7 +41,7 @@ public class TitleScreenManager : VisualElement
 
         m_OptionsScreen?.Q("back-button")?.RegisterCallback<ClickEvent>(ev => EnableTitleScreen());
 
-        //lis‰‰ quit button
+        //add quit button
 
         this.UnregisterCallback<GeometryChangedEvent>(OnGeometryChange);
     }

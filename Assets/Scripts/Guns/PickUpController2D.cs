@@ -22,9 +22,6 @@ public class PickUpController2D : MonoBehaviour
     public bool equipped;
     public static bool slotFull;
 
-    // aseen nappaus n‰pp‰imen ja sijainnin mukaan jolloin ei tarvita Boxcollider ja  updatea
-    //PickUp() ja Drop() tehd‰‰n eventeill‰
-
     private void Awake()
     {
        player = GameObject.Find("Player").GetComponent<Transform>();
