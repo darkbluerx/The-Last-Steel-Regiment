@@ -2,28 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Collections;
+using UnityEngine.Events;
+using UnityEditor;
 
 public class Gun : MonoBehaviour
 {
-    Bullet currentBullet;
+    [Header("Change the crosshair")]
+    [SerializeField] UnityEvent crosshairEvent;
+    [Space]
 
+    [Header("Weapon attributes")]
     [SerializeField] GunStatsSO gunStats;
     [Space]
+
+    [Header("Sounds")]
     public AudioEvent shootAudioEvent;
-    public AudioEvent reloadEvent;
+    public AudioEvent reloadAudioEvent;
+    public AudioEvent weaponPickUp;
     public AudioSource audioSource;
     [Space]
 
-    //tee enumeilla raycastshoot ja projictileshoot
-
-    [Header("Gun")]
+    [Header("Gun parts")]
     [SerializeField] Transform barrelPoint;
     [SerializeField] GameObject bullet;
-    //[Space]
+    [SerializeField] GameObject shell;
 
-    //[Header("Gun Shooting Mod")]
+    //[Header("Shooting Mode")]
     [SerializeField] enum TriggerType { auto = 0, single = 1, burst = 2 };
-    [SerializeField] TriggerType currentMode = TriggerType.auto;
+    [SerializeField] TriggerType shootingMode; //= TriggerType.auto;
     [Space]
     //recoil shakeCamera
 
@@ -31,13 +37,10 @@ public class Gun : MonoBehaviour
     //public WeaponType weaponType = WeaponType.Projectile;
 
     //[Header("Bools")]
-
-    public bool isAuto;
-    public bool isSingle;
-    public bool isBurst;
-    [Space]
-    [Space]
-
+    bool isAuto;
+    bool isSingle;
+    bool isBurst;
+  
     public bool offSafety;
     bool readyToShoot;
     [SerializeField] bool allowButtonHold = true;
@@ -45,65 +48,76 @@ public class Gun : MonoBehaviour
     bool reloading;
     readonly public bool shootingEnabled = true;
 
-    //public LayerMask layerMask;
-
     private void Awake()
     {
-        
+       audioSource = GameObject.Find("Player").GetComponent<AudioSource>();
     }
 
     private void Start()
     {
         gunStats.bulletLeft = gunStats.magazineSize;
         readyToShoot = true;
-        isAuto = true;
+        isAuto = true;   
     }
 
     private void Update()
     {
         ChangeGunShootingMod();
-        ShootButtonPressedDown();
-        SingleShot();
+        if(isAuto)ShootButtonPressedDown();
+        if(isSingle)SingleShot();
+    }
 
-        //siirr‰ t‰m‰ UI sciptiin
-        //text.SetText(bulletsLeft / bulletsPerTap + " / " + magazineSize / bulletsPerTap);
-        //if (Input.GetKeyDown(KeyCode.T)) { ChangeGunShootingMod();}
-       
-        //if(currentMode == TriggerType.auto)
-        //{
+    private void OnEnable()
+    {
+        //Activates the correct crosshair based on the weapon's atributes
+        Invoke("Crosshair",0.1f);
+    }
 
-        //}
-
+    public void Crosshair()
+    {
+        if (gunStats.gunType == GunStatsSO.GunType.handgun)
+        {
+            crosshairEvent?.Invoke();
+        }
+        if (gunStats.gunType == GunStatsSO.GunType.submachinegun)
+        {
+            crosshairEvent?.Invoke();
+        }
+        if (gunStats.gunType == GunStatsSO.GunType.rifle)
+        {
+            crosshairEvent?.Invoke();
+        }
+        if (gunStats.gunType == GunStatsSO.GunType.machinegun)
+        {
+            crosshairEvent?.Invoke();
+        }
     }
 
     private void ChangeGunShootingMod()
-    { 
-        //esimerkki
-        //if(currentMode == TriggerType.single)
-       
-
+    {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            switch (currentMode)
+            switch (shootingMode)
             {
-                case TriggerType.auto: currentMode = TriggerType.single;               
+                case TriggerType.auto: shootingMode = TriggerType.single;
                     gunStats.bulletShot = gunStats.bulletPerTap;
                     isSingle = true;
                     isAuto = false;
-                    ShootButtonPressedDown();
-                    break;
-       
-                case TriggerType.single: currentMode = TriggerType.burst;
-                    isAuto = false;
-                    isBurst = true;
-                    isSingle = false;
-                    SingleShot();
+                    //isBurst = false;
                     break;
 
-                case TriggerType.burst: currentMode = TriggerType.auto;
+                case TriggerType.single:
+                    shootingMode = TriggerType.burst; // Is not installed
+                    isAuto = true;
+                    isBurst = true;
+                    isSingle = false;
+                    break;
+
+                case TriggerType.burst:
+                    shootingMode = TriggerType.auto;
                     isAuto = true;
                     isSingle = false;
-                    isBurst = false;
+                    //isBurst = false;
                     break;
             }
         }
@@ -111,13 +125,13 @@ public class Gun : MonoBehaviour
 
     private void ShootButtonPressedDown()
     {
-        if (allowButtonHold) offSafety = Input.GetKey(KeyCode.Mouse0) && isAuto; //ammutaan nappulan ollessa pohjassa
+        if (allowButtonHold) offSafety = Input.GetKey(KeyCode.Mouse0); //&& isAuto; //ammutaan nappulan ollessa pohjassa
         CheckUsersInput();
     }
 
-    private void SingleShot()
+    public void SingleShot()
     {
-        offSafety = Input.GetKeyDown(KeyCode.Mouse0) && isSingle;//ammutaan kerran painattaessa
+        offSafety = Input.GetKeyDown(KeyCode.Mouse0); //&& isSingle;//ammutaan kerran painattaessa
         CheckUsersInput();
     }
 
@@ -140,11 +154,14 @@ public class Gun : MonoBehaviour
         shootAudioEvent.Play(audioSource);
 
         //Make spread
-        Vector3 bulletSpread = new Vector3(0, Random.Range(-gunStats.spread, gunStats.spread));
+        Vector3 bulletSpread = new Vector3(Random.Range(-gunStats.spread, gunStats.spread),0,0);
 
-        //Instantuate bullet
-        GameObject currentBullet = Instantiate(bullet, barrelPoint.position, Quaternion.Euler(0,0,0));
+        //Instantiate bullet
+        GameObject currentBullet = Instantiate(bullet, barrelPoint.position, Quaternion.Euler(0,0,-90));
 
+        //Instantiate shell
+        GameObject currentShell = Instantiate(shell, (barrelPoint.position) - transform.right * Random.Range(0.5f,1), bullet.transform.rotation);
+        
         //Add force & make spread
         currentBullet.GetComponent<Rigidbody2D>().AddForce(transform.right * gunStats.bulletSpeed + bulletSpread, ForceMode2D.Impulse);
 
@@ -178,7 +195,7 @@ public class Gun : MonoBehaviour
     private void StartReload()
     {
         reloading = true;
-        reloadEvent.Play(audioSource); //soitet‰‰n ‰‰ni
+        reloadAudioEvent.Play(audioSource); // Play reload sound
         Invoke("ReloadingFinished", gunStats.reloadTime);
     }
 

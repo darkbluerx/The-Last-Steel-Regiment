@@ -1,0 +1,31 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/MapUi.uss?fileID=7433441132597879392&amp;guid=836dd55a82b6bbd47bf687e3c6e06514&amp;type=3#MapUi" />
+    <ui:VisualElement name="Menu" style="flex-grow: 1; flex-direction: row;">
+        <ui:VisualElement name="LeftCorner" style="flex-basis: 33%; flex-grow: 1; background-color: rgb(140, 48, 48); flex-direction: row; align-items: stretch; justify-content: center;">
+            <ui:VisualElement style="flex-grow: 0; flex-basis: 58%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;">
+                <ui:IMGUIContainer name="EaglePic" style="background-image: url(&apos;project://database/Assets/Sprites/Hawk.png?fileID=2800000&amp;guid=59040fdab0414e14e85768fb81e3b970&amp;type=3#Hawk&apos;); flex-grow: 1; flex-basis: auto; -unity-background-scale-mode: scale-to-fit; -unity-background-image-tint-color: rgb(178, 175, 175); top: 0; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 10px; border-right-width: 10px; border-top-width: 42px; border-bottom-width: 10px; border-top-left-radius: 13px; border-bottom-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; background-color: rgb(209, 64, 64); width: auto; height: auto; align-items: stretch; right: auto; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;">
+                    <ui:IMGUIContainer style="background-color: rgb(0, 0, 0); top: 35.1%; flex-grow: 0.01;" />
+                    <ui:IMGUIContainer style="background-color: rgb(0, 0, 0); top: 55%; flex-grow: 0.01;" />
+                </ui:IMGUIContainer>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Buttons" style="flex-basis: 33%; align-items: center; justify-content: center; background-color: rgb(47, 47, 48); -unity-text-outline-color: rgb(183, 68, 68);">
+            <ui:Label text="The Last Steel Regiment" display-tooltip-when-elided="true" class="label" style="top: -30%;" />
+            <ui:Button text="Play" display-tooltip-when-elided="true" name="PlayButton" class="button" style="top: -14%;" />
+            <ui:Button text="Settings" display-tooltip-when-elided="true" name="SettingsButton" class="button" />
+            <ui:Button text="Credits" display-tooltip-when-elided="true" name="CreditsButton" class="button" style="top: -5%;" />
+            <ui:Button text="Exit" display-tooltip-when-elided="true" name="ExitButton" class="button" style="top: 0;" />
+            <ui:IMGUIContainer style="top: -51%; flex-grow: 0; width: 95%; height: 1%; background-color: rgb(92, 111, 135); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px;" />
+            <ui:IMGUIContainer style="top: -60%; flex-grow: 0; width: 75%; height: 1%; background-color: rgb(92, 111, 135); margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px;" />
+            <ui:Button text="Mute" display-tooltip-when-elided="true" name="MuteButton" class="button" style="top: 0;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="RightCorner" style="flex-basis: 33%; flex-grow: 1; background-color: rgb(140, 48, 48); flex-direction: row; align-items: stretch; justify-content: center;">
+            <ui:VisualElement style="flex-grow: 0; flex-basis: 58%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;">
+                <ui:IMGUIContainer name="EaglePic" style="background-image: url(&apos;project://database/Assets/Sprites/Hawk.png?fileID=2800000&amp;guid=59040fdab0414e14e85768fb81e3b970&amp;type=3#Hawk&apos;); flex-grow: 1; flex-basis: auto; -unity-background-scale-mode: scale-to-fit; -unity-background-image-tint-color: rgb(178, 175, 175); top: 0; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 10px; border-right-width: 10px; border-top-width: 42px; border-bottom-width: 10px; border-top-left-radius: 13px; border-bottom-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; background-color: rgb(209, 64, 64); width: auto; height: auto; align-items: stretch; right: auto; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;">
+                    <ui:IMGUIContainer style="background-color: rgb(0, 0, 0); top: 35.1%; flex-grow: 0.01;" />
+                    <ui:IMGUIContainer style="background-color: rgb(0, 0, 0); top: 55%; flex-grow: 0.01;" />
+                </ui:IMGUIContainer>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

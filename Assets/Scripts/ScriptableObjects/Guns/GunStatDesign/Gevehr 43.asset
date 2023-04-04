@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c7e48242e8b06343a9fd3669242b8ef, type: 3}
+  m_Name: Gevehr 43
+  m_EditorClassIdentifier: 
+  gunType: 2
+  damage: 28
+  bulledRange: 22
+  reloadTime: 3
+  bulletSpeed: 20
+  bulletPerTap: 1
+  magazineSize: 10
+  bulletShot: -74
+  bulletLeft: 10
+  timeBetweenShots: 0.22
+  timeBetweenShooting: 0.44
+  spread: 0.3
+  durability: 0
+  weaponAccessoriesNumber: 0

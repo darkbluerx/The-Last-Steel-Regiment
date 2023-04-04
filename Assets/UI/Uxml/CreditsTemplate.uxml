@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Uss/MapUi.uss?fileID=7433441132597879392&amp;guid=836dd55a82b6bbd47bf687e3c6e06514&amp;type=3#MapUi" />
+    <ui:VisualElement style="align-items: center; justify-content: center;">
+        <ui:Label text="Credits" display-tooltip-when-elided="true" />
+        <ui:Label text="Antti" display-tooltip-when-elided="true" />
+        <ui:Button text="Back" display-tooltip-when-elided="true" name="BackButtonCredits" style="top: 364%;" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="MainMenu" src="project://database/Assets/UI/Uxml/MainMenu.uxml?fileID=9197481963319205126&amp;guid=78f881a55f61dc544ba3217486e57614&amp;type=3#MainMenu" />
+    <ui:Template name="CreditsTemplate" src="project://database/Assets/UI/Uxml/CreditsTemplate.uxml?fileID=9197481963319205126&amp;guid=9d87b63575938a6408633970175f7871&amp;type=3#CreditsTemplate" />
+    <Style src="project://database/Assets/UI/Uss/MapUi.uss?fileID=7433441132597879392&amp;guid=836dd55a82b6bbd47bf687e3c6e06514&amp;type=3#MapUi" />
+    <TitleScreenManager class="screen">
+        <ui:Instance template="CreditsTemplate" name="CreditsTemplate" class="screen" />
+        <ui:Instance template="MainMenu" name="MainMenu" tabindex="0" class="screen" style="overflow: visible;" />
+    </TitleScreenManager>
+</ui:UXML>

@@ -1,17 +1,16 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-//using System.Runtime.Remoting.Messaging;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class GunSpawner : MonoBehaviour
+public class OldGunSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] fixedGunList;
     [SerializeField] Transform[] fixedGunPosition;
     [Space]
     [Space]
-    [SerializeField] GameObject[] gunList;
+    //[SerializeField] GameObject[] gunList;
+
+    //public static GunSpawner Instance = null;
+    public List<GunList> gunList = new List<GunList>();
 
     [Header("Location next to the Player")]
     [SerializeField] Transform gunPosition;
@@ -22,11 +21,6 @@ public class GunSpawner : MonoBehaviour
     [Space]
     public SelectedGun selectedGun;
     //[SerializeField] Dictionary<SelectedGun, GameObject> selectedGunList;
-
-    public GunSpawner(GunSpawner gunSpawner)
-    {
-        this.selectedGun = gunSpawner.selectedGun;
-    }
 
 
     private void Start()
@@ -40,12 +34,12 @@ public class GunSpawner : MonoBehaviour
     {
         switch (selectedGun)
         {
-            case SelectedGun.Pistol:
-                Instantiate(gunList[0], gunPosition.position + gunDistance, Quaternion.identity); break;
-            case SelectedGun.Machinegun:
-                Instantiate(gunList[1], gunPosition.position + gunDistance * 1.5f, Quaternion.identity); break;
-            case SelectedGun.Rifle:
-                Instantiate(gunList[2], gunPosition.position + gunDistance * 2, Quaternion.identity); break;
+            //case SelectedGun.Pistol:
+            //    Instantiate(gunList[selectedGun], gunPosition.position + gunDistance, Quaternion.identity); break;
+            //case SelectedGun.Machinegun:
+            //    Instantiate(gunList[1], gunPosition.position + gunDistance * 1.5f, Quaternion.identity); break;
+            //case SelectedGun.Rifle:
+            //    Instantiate(gunList[2], gunPosition.position + gunDistance * 2, Quaternion.identity); break;
         }
     }
 

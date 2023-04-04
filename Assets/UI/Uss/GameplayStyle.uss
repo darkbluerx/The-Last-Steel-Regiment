@@ -1,0 +1,26 @@
+.icon {
+    flex-grow: 0.5;
+    width: auto;
+    height: auto;
+    -unity-background-scale-mode: stretch-to-fill;
+    flex-basis: auto;
+    flex-direction: column;
+    bottom: -16%;
+}
+
+.progressbar {
+    rotate: -90deg;
+}
+
+.healthLabel {
+    -unity-font-style: bold-and-italic;
+    color: rgba(0, 0, 0, 255);
+}
+
+.bar {
+    width: 5%;
+    height: 20%;
+    background-color: rgba(156, 54, 54, 255);
+    align-items: center;
+    justify-content: space-around;
+}

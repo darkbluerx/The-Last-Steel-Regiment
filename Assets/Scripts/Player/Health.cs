@@ -1,35 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour, IDamageable
+public class Health : MonoBehaviour //IDamageable
 {
-    [SerializeField] private float health = 100;
-    private bool isDestroing;
+    [SerializeField] int m_health = 100;
+    //[SerializeField] int m_maxHealth = 100;
 
-    //public TimeManager timeManager;
-   
-    //[Header("TestButton P"), Tooltip("Voit vaihtaa näppäintä")]
-    //public KeyCode PlayButton = KeyCode.Space;
+    bool isDestroing;
 
-    private void Update()
+    public void TakeDamage(int amount)
     {
-        //if(Input.GetKeyDown(PlayButton)) StartCoroutine(DestroyObject());
-    }
-
-    public void TakeDamage(float amount)
-    {
-        health -= amount;
-        if (health < 0 && !isDestroing) StartCoroutine(DestroyObject());
+        m_health -= amount;
+        if (m_health < 0 && !isDestroing) StartCoroutine(DestroyObject());
     }
 
     private IEnumerator DestroyObject()
-    {     
-        //timeManager.DoSlowmotion();
-
+    {  
         isDestroing = true;
         GetComponent<Renderer>().material.color = Color.blue;
         yield return new WaitForSeconds(3);
         Destroy(gameObject);
-    }  
+    }
 }
+

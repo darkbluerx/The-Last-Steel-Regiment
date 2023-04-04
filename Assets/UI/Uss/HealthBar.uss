@@ -1,0 +1,6 @@
+
+.health-bar {
+    rotate: -90deg;
+    translate: 0 -84%;
+    position: absolute;
+}

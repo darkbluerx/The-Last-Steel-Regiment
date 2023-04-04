@@ -1,0 +1,104 @@
+.label {
+    flex-direction: row-reverse;
+    align-items: auto;
+    justify-content: space-around;
+    flex-basis: 12%;
+    -unity-text-align: middle-left;
+    white-space: nowrap;
+    -unity-font-definition: url('project://database/Assets/UI/Fonts/static/PlayfairDisplay-Bold%20SDF.asset?fileID=11400000&guid=75fb38d1f92bac040a746ead1ffa3f9c&type=2#PlayfairDisplay-Bold SDF');
+    color: rgb(37, 7, 142);
+    font-size: 22px;
+}
+
+.tittle {
+    -unity-font-definition: url('project://database/Assets/UI/Fonts/static/PlayfairDisplay-Bold%20SDF.asset?fileID=11400000&guid=75fb38d1f92bac040a746ead1ffa3f9c&type=2#PlayfairDisplay-Bold SDF');
+}
+
+.statBox {
+    top: auto;
+    bottom: auto;
+    position: relative;
+    margin-top: 1%;
+    border-bottom-width: 3px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    flex-basis: auto;
+    height: auto;
+    -unity-text-align: upper-left;
+}
+
+.staBoxIcon {
+    width: 5%;
+    height: 100%;
+    flex-basis: 4%;
+    min-width: auto;
+    min-height: auto;
+    background-image: url('project://database/Assets/UI/Icons/10.png?fileID=2800000&guid=370236efbbf616a4a8b69c8d2e2a7974&type=3#10');
+    -unity-background-scale-mode: scale-to-fit;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 2px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: rgb(0, 0, 0);
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    -unity-text-align: upper-left;
+}
+
+.tittleBaseStats {
+    flex-direction: row-reverse;
+    align-items: auto;
+    justify-content: space-around;
+    flex-basis: 12%;
+    -unity-text-align: upper-left;
+    white-space: nowrap;
+    -unity-font-definition: url('project://database/Assets/UI/Fonts/static/PlayfairDisplay-Bold%20SDF.asset?fileID=11400000&guid=75fb38d1f92bac040a746ead1ffa3f9c&type=2#PlayfairDisplay-Bold SDF');
+    color: rgb(47, 210, 37);
+    -unity-text-outline-width: 0;
+    font-size: 22px;
+}
+
+.tittleWeaponStats {
+    flex-direction: row-reverse;
+    align-items: auto;
+    justify-content: space-around;
+    flex-basis: 12%;
+    -unity-text-align: middle-left;
+    white-space: nowrap;
+    -unity-font-definition: url('project://database/Assets/UI/Fonts/static/PlayfairDisplay-Bold%20SDF.asset?fileID=11400000&guid=75fb38d1f92bac040a746ead1ffa3f9c&type=2#PlayfairDisplay-Bold SDF');
+    color: rgb(142, 37, 37);
+    -unity-text-outline-width: 0;
+    font-size: 22px;
+}
+
+.tittleSkills {
+    flex-direction: row-reverse;
+    align-items: auto;
+    justify-content: space-around;
+    flex-basis: 12%;
+    -unity-text-align: upper-left;
+    white-space: nowrap;
+    -unity-font-definition: url('project://database/Assets/UI/Fonts/static/PlayfairDisplay-Bold%20SDF.asset?fileID=11400000&guid=75fb38d1f92bac040a746ead1ffa3f9c&type=2#PlayfairDisplay-Bold SDF');
+    color: rgb(241, 248, 0);
+    -unity-text-outline-width: 0;
+    font-size: 22px;
+}
