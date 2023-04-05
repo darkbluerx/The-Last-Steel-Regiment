@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace CombatSystem.Core//inherits perii
+namespace CombatSystem.Core
 {
     //you only create health variables and events
     public interface IDamageable
