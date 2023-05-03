@@ -9,7 +9,6 @@ public class EnemyShooting : MonoBehaviour
     public EnemyStats enemyStats;
     public GunStatsSO gunStats;
     
-
     [SerializeField] Transform barrelPoint;
     [SerializeField] GameObject bullet;
 
@@ -77,8 +76,4 @@ public class EnemyShooting : MonoBehaviour
     
         Destroy(currentBullet, enemyStats.attackRange);
     }
-
-
-
-
 }

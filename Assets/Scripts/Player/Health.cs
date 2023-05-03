@@ -1,9 +1,10 @@
+using CombatSystem.Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour //IDamageable
+public class Health : MonoBehaviour, IDamageable
 {
     [SerializeField] int m_health = 100;
     //[SerializeField] int m_maxHealth = 100;

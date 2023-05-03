@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c815f138afd32b4e8f32bebc6d32a50, type: 3}
-  m_Name: ChaseChaser
+  m_Name: Chase Chaser
   m_EditorClassIdentifier: 
   actions:
   - {fileID: 11400000, guid: 8ded8f19c9b1c894ea406d8798412387, type: 2}
-  - {fileID: 11400000, guid: e493ce21e24a916469fce780c81aac77, type: 2}
+  - {fileID: 11400000, guid: 043d7138567b9eb40bb6742426bf7151, type: 2}
   transitions:
   - decision: {fileID: 11400000, guid: 815a70d51f50dab46b3e8c1186cb46f2, type: 2}
     trueState: {fileID: 11400000, guid: 85932cf85953c3a40aca487ca5183c67, type: 2}

@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c815f138afd32b4e8f32bebc6d32a50, type: 3}
-  m_Name: RemainState
+  m_Name: Alert Scanner
   m_EditorClassIdentifier: 
-  actions:
-  - {fileID: 0}
+  actions: []
   transitions:
-  - decision: {fileID: 0}
-    trueState: {fileID: 0}
-    falseState: {fileID: 0}
-  sceneGizmoColor: {r: 0.67110485, g: 0.735849, b: 0.6699003, a: 1}
+  - decision: {fileID: 11400000, guid: 8b5bc34a4fcc3864e9dab41af8f803e0, type: 2}
+    trueState: {fileID: 11400000, guid: dba6c910fbf3cae49918094cc4391494, type: 2}
+    falseState: {fileID: 11400000, guid: 85932cf85953c3a40aca487ca5183c67, type: 2}
+  sceneGizmoColor: {r: 0.93412864, g: 1, b: 0, a: 1}
