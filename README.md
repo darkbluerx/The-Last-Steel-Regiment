@@ -7,7 +7,7 @@ Working scenes TestMap
 
 Buttons:
 
--Move A,W,S,D
+-Move A, W, S, D
 
 -Pick gun/use teleport E
 
